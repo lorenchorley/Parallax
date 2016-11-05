@@ -5,8 +5,9 @@ public class CameraControls : MonoBehaviour {
 
     public float speed;
     public Paralax Paralax;
+    public ParalaxRepeater[] Repeaters;
 
-	void Update () {
+    void Update () {
         bool moved = false;
 
         if (Input.GetKey(KeyCode.UpArrow)) {
@@ -25,8 +26,12 @@ public class CameraControls : MonoBehaviour {
             moved = true;
         }
 
-        if (moved)
+        if (moved && Paralax != null)
             Paralax.UpdateParalaxObjects();
+
+        if (moved && Repeaters != null)
+            foreach (ParalaxRepeater r in Repeaters)
+                r.SignalCameraMoved();
 
     }
 

@@ -93,7 +93,6 @@ public class Paralax : MonoBehaviour {
             float modifiedNormalisedZ = Speed * profile.GetNormalisedZ();
 
             Vector3 cameraDisplacement = Camera.position - CameraInitialPosition;
-            //Vector3 paralaxedObjectDisplacement = new Vector3(ParalaxFn(profile.zTransformed, cameraDisplacement.x), ParalaxFn(profile.zTransformed, cameraDisplacement.y));
             Vector3 paralaxedObjectDisplacement = new Vector3(modifiedNormalisedZ * cameraDisplacement.x, modifiedNormalisedZ * cameraDisplacement.y);
 
             profile.obj.position = profile.originalLocalPosition + paralaxedObjectDisplacement;
