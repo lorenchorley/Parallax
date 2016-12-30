@@ -1,2 +1,2 @@
 # Paralax
-A Unity3D paralax script
+A Unity3D parallax script
